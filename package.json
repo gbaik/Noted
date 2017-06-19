@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/index.js",
-    "build": "babel . --out-dir compiled --presets=es2015,react --ignore compiled,node_modules --source-maps inline--watch"
+    "build": "babel . --watch --out-dir compiled --presets=es2015,react --ignore compiled,node_modules --source-maps inline"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/gbaik/hrsf78-mvp#readme",
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
