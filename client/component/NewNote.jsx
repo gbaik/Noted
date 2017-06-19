@@ -4,18 +4,18 @@ class NewNote extends React.Component {
 
     this.state = {
       title: '',
-      note: ''
+      entry: ''
     };
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleNoteChange = this.handleNoteChange.bind(this);
+    this.handleEntryChange = this.handleEntryChange.bind(this);
     this.handleSavingNotes = this.handleSavingNotes.bind(this);
   }
 
   handleSavingNotes(callback) {
     var data = {
       title : this.state.title,
-      note : this.state.note
+      entry : this.state.entry
     }
 
     $.ajax({
@@ -27,7 +27,7 @@ class NewNote extends React.Component {
         console.log('POST request success!');
       },
       error: function() {
-        console.log('POST request failure, new note didn\'t save');
+        console.log('POST request failure, new entry didn\'t save');
       }
     });
   }
@@ -38,9 +38,9 @@ class NewNote extends React.Component {
     });
   }
 
-  handleNoteChange(event) {
+  handleEntryChange(event) {
     this.setState({
-      note: event.target.value
+      entry: event.target.value
     });
   }
 
@@ -56,7 +56,7 @@ class NewNote extends React.Component {
         </div>
         <div>
           <h3>Notes</h3>
-          <textarea onChange={this.handleNoteChange} className="note"></textarea>
+          <textarea onChange={this.handleEntryChange} className="entry"></textarea>
         </div>
       </div>
     );
