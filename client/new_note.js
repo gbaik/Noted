@@ -1,0 +1,1 @@
+ReactDOM.render(<NewNote />, document.getElementById('NewNote'));
