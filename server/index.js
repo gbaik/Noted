@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 
 app.get('/', function (req, res) {
-  // res.redirect('../client/index.html');
+  res.redirect('/client/index.html');
+})
+
+app.get('/client/index.html', function (req, res) {
   res.send('Hello World!');
 })
 
