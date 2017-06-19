@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/index.js",
-    "build": "babel . --watch --out-dir compiled --ignore compiled,node_modules --presets=es2015,react --source-maps inline"
+    "server": "node server/index.js",
+    "build": "babel . --watch --out-dir compiled --ignore compiled,node_modules --presets=es2015,react --source-maps inline",
+    "start" : "npm server & npm run build"
   },
   "repository": {
     "type": "git",
