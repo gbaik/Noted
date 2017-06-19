@@ -18,27 +18,38 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+Noted
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+High school to college age students who wants an easy way to organize and take digital notes.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+Do you have files of random documents all over your computer? Don't you ever wish you could have some way of organizing it? Welcome to 
+the new age of writing. Noted a simple way to organize, and take notes.
 
 ## Problem ##
   > Describe the problem your product solves.
+An easier way to organize and take notes.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+The user will be able to add tags to their notes. This will allow easier organization amongst the myriad of notes that they will take.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+"Your problems. Noted. Our solution."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+Just log in and write your notes, add a tag (optional), and click save. 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+"Noted made it easy to organize my notes. Now I can keep each of my classes notes oragnized and easy to access."
+  -Average College Student
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Come join us at localhost:3000 for an experience like no other.
