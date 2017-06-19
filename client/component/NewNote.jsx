@@ -3,8 +3,8 @@ class NewNote extends React.Component {
     super(props);
 
     this.state = {
-      title: 'test',
-      note: 'test'
+      title: '',
+      note: ''
     };
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -12,9 +12,24 @@ class NewNote extends React.Component {
     this.handleSavingNotes = this.handleSavingNotes.bind(this);
   }
 
-  handleSavingNotes() {
-    console.log('title:',this.state.title);
-    console.log('note:',this.state.note);
+  handleSavingNotes(callback) {
+    var data = {
+      title : this.state.title,
+      note : this.state.note
+    }
+
+    $.ajax({
+      url: '/add/newNotes',
+      method: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      success: function() {
+        console.log('POST request success!');
+      },
+      error: function() {
+        console.log('POST request failure, new note didn\'t save');
+      }
+    });
   }
 
   handleTitleChange(event) {
