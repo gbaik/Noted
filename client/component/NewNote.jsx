@@ -21,8 +21,7 @@ class NewNote extends React.Component {
     $.ajax({
       url: '/add/newNotes',
       method: 'POST',
-      data: JSON.stringify(data),
-      contentType: 'application/json',
+      data: data,
       success: function() {
         console.log('POST request success!');
       },

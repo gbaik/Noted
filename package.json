@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "build": "babel . --watch --out-dir compiled --ignore compiled,node_modules,server --presets=es2015,react --source-maps inline"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
