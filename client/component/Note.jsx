@@ -1,35 +1,53 @@
-var Note = ({noteTitle, noteEntry}) => {
-  var editNote = (title, entry) => {
-    findNote(title, entry, (note) => {
-      console.log(note);
-    });
-  };
+class Note extends React.Component {
+  constructor(props) {
+    super(props)
 
-  var findNote = (title, entry, callback) => {
-    console.log(title, entry);
-    $.ajax({
-      url: '/client/editNote',
-      type: 'GET',
-      contentType: 'application/json',
-      success: function(data) {
-        console.log('GET request success');
-        callback(data);
-      },
-      error: function() {
-        console.log('GET request failure');
-      }
+    this.noteId = this.props.noteId;
+    this.noteTitle = this.props.noteTitle;
+    this.noteEntry = this.props.noteEntry;
+
+    this.state = {
+      renderNeed: false, 
+      needArray: []
+    };
+
+    this.editNote = this.editNote.bind(this);
+  }
+
+  editNote() {
+
+    this.setState({
+      renderNeed: true,
+      needArray: [<EditNote noteTitle={this.noteTitle} noteEntry={this.noteEntry} noteId={this.noteId}/>]
     })
   };
 
-  return(
-    <div>
-      <button onClick={() => editNote(noteTitle, noteEntry)}>{noteTitle}</button>
-      {noteEntry}
-    </div>
-  )
-}
+  // findNote(callback) {
+  //   var url = noteTitle + '/' + noteId;
 
-/*
-  Notes must have title in the url link
-  Acess the notes and edit them
-*/
+  //   $.ajax({
+  //     url: '/client/editNote',
+  //     type: 'GET',
+  //     contentType: 'application/json',
+  //     success: function(data) {
+  //       console.log('GET request success');
+  //       location.assign('./edit_note.html/');
+  //     },
+  //     error: function() {
+  //       console.log('GET request failure');
+  //     }
+  //   })
+  // };
+
+  render() {
+    return(
+      <div>
+        <button onClick={this.editNote}>{this.noteTitle}</button>
+        {this.noteEntry}
+        <div>
+        {this.state.renderNeed ? this.state.needArray : null}
+        </div>
+      </div>
+    )
+  }
+}

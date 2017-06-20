@@ -37,9 +37,9 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-          <input placeholder="Search"></input>
-          <button onClick={this.newNote}>New Note</button>
-          <NoteList notes={this.state.notes} />
+        <button onClick={this.newNote}>New Note</button>
+        <input placeholder="Search"></input>
+        <NoteList notes={this.state.notes} />
       </div>
     );
   }
