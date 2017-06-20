@@ -19,6 +19,15 @@ app.get('/client/allNotes', function (request, response) {
   });
 });
 
+app.post('/remove/oneNote', function (request, response) {
+  Notes.findOneAndRemove({ _id: request.body.id }, {$set: {Entry: request.body.entry}}, function (err) {
+    if (err) return handleError(err);
+    console.log('success');
+  })
+
+  response.end();
+});
+
 app.post('/add/newNotes', function (request, response) {
   Notes.create({Title: request.body.title, Entry: request.body.entry}, function (err) {
     if (err) return handleError(err);
