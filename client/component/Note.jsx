@@ -22,23 +22,6 @@ class Note extends React.Component {
     })
   };
 
-  // findNote(callback) {
-  //   var url = noteTitle + '/' + noteId;
-
-  //   $.ajax({
-  //     url: '/client/editNote',
-  //     type: 'GET',
-  //     contentType: 'application/json',
-  //     success: function(data) {
-  //       console.log('GET request success');
-  //       location.assign('./edit_note.html/');
-  //     },
-  //     error: function() {
-  //       console.log('GET request failure');
-  //     }
-  //   })
-  // };
-
   render() {
     return(
       <div>
