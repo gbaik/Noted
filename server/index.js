@@ -1,5 +1,5 @@
-const db = require('./database/connection');
-const bodyParser = require('body-parser')
+const Notes = require('./schema');
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
@@ -12,23 +12,12 @@ app.get('/', function (request, response) {
 });
 
 app.post('/add/newNotes', function (request, response) {
-  // var body = '';
-  // request.on('data', function(chunk) {
-  //   body += chunk;
-  // }).on('end', function() {
-  //   response.writeHead(201, 'content-type : application/json');
-  //   body = JSON.parse(body);
-  //   console.log(body.title);
-  //   // db.query('INSERT INTO notes (title, entry) VALUES (?, ?)', {body.title, body.entry} ,function (error, results) {
-  //   //   if (error) throw error;
-  //   //   console.log('From database:', results);
-  //   // });
-  //   response.end();
-  // }).on('error', function() {
-  //   response.statusCode = 404;
-  //   response.end();
-  // });
-  console.log(request.body);
+  Notes.create({Title: request.body.title, Entry: request.body.entry}, function (err) {
+    if (err) return handleError(err);
+    console.log('success');
+  })
+
+  response.end();
 });
 
 app.listen(3000, function () {

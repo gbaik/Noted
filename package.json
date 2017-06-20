@@ -25,6 +25,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "jquery": "^3.2.1",
+    "mongodb": "^2.2.29",
+    "mongoose": "^4.10.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
