@@ -11,6 +11,14 @@ app.get('/', function (request, response) {
   response.redirect('/client/index.html');
 });
 
+app.get('/client/allNotes', function (request, response) {
+  response.writeHead(200, {'content-type' : 'application/json'});
+  Notes.find({}, function (err, results) {
+    if (err) return handleError(err);
+    response.end(JSON.stringify(results));
+  });
+});
+
 app.post('/add/newNotes', function (request, response) {
   Notes.create({Title: request.body.title, Entry: request.body.entry}, function (err) {
     if (err) return handleError(err);

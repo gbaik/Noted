@@ -12,7 +12,7 @@ class NewNote extends React.Component {
     this.handleSavingNotes = this.handleSavingNotes.bind(this);
   }
 
-  handleSavingNotes(callback) {
+  handleSavingNotes() {
     var data = {
       title : this.state.title,
       entry : this.state.entry
@@ -24,6 +24,7 @@ class NewNote extends React.Component {
       data: data,
       success: function() {
         console.log('POST request success!');
+        location.assign('/client/index.html');
       },
       error: function() {
         console.log('POST request failure, new entry didn\'t save');
