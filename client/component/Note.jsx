@@ -8,25 +8,31 @@ class Note extends React.Component {
 
     this.state = {
       renderNeed: false, 
-      needArray: [<div></div>]
+      needArray: []
     };
 
     this.editNote = this.editNote.bind(this);
+    this.cancelChange = this.cancelChange.bind(this);
+  }
+
+  cancelChange() {
+    this.setState({
+      renderNeed: false
+    })
   }
 
   editNote() {
-
     this.setState({
       renderNeed: true,
-      needArray: [<EditNote noteTitle={this.noteTitle} noteEntry={this.noteEntry} noteId={this.noteId}/>]
+      needArray: [<EditNote noteTitle={this.noteTitle} noteEntry={this.noteEntry} noteId={this.noteId} cancel={this.cancelChange}/>]
     })
-  };
+  }
+
 
   render() {
     return(
-      <div>
-        <button onClick={this.editNote}>{this.noteTitle}</button>
-        {this.noteEntry}
+      <div className="box">
+        <div onClick={this.editNote} className="message-header $yellow">{this.noteTitle}</div>
         <div>
         {this.state.renderNeed ? this.state.needArray : null}
         </div>

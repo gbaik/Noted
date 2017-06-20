@@ -50,10 +50,15 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.newNote}>New Note</button>
-        <input placeholder="Search" onChange={(event) => this.searchNotes(event.target.value, this.state.notes)}></input>
-        <NoteList notes={this.state.notes} />
+        <div className="column is-centered">
+          <h1 className="title">Noted</h1>
+        </div>
+        <div className="column">
+          <button className="button is-outline is-small" onClick={this.newNote}>New Note</button>
+          <NoteList notes={this.state.notes} />
+        </div>
       </div>
     );
   }
 }
+

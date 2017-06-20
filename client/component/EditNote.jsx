@@ -9,6 +9,7 @@ class EditNote extends React.Component {
     this.noteId = this.props.noteId;
     this.noteTitle = this.props.noteTitle;
     this.noteEntry = this.props.noteEntry;
+    this.cancel = this.props.cancel;
 
     this.handleSavingNotes = this.handleSavingNotes.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
@@ -33,11 +34,13 @@ class EditNote extends React.Component {
       data: data,
       success: function() {
         console.log('POST request success!');
+        location.reload();
       },
       error: function() {
         console.log('POST request failure, new entry didn\'t save');
       }
     });
+    
   }
 
   handleEntryChange(event) {
@@ -46,18 +49,13 @@ class EditNote extends React.Component {
     });
   }
 
-
   render() {
     return (
-      <div>
-        <h1>{this.noteTitle}</h1>
-        <button onClick={this.handleSavingNotes}>Save</button>
-        <div>
-          <h3>Notes</h3>
-          <textarea onChange={this.handleEntryChange} className="entry" value={this.state.entry}></textarea>
-        </div>
+      <div className="column">
+          <textarea className="Large textarea" onChange={this.handleEntryChange} value={this.state.entry}></textarea>
+          <button className="button is-outline is-small"onClick={this.handleSavingNotes}>Save</button>
+          <button className="button is-outline is-small"onClick={() => this.cancel()}>Cancel</button>
       </div>
     );
   }
 }
-//Todo: Only show one edit area at a time

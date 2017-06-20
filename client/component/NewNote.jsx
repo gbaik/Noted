@@ -57,16 +57,18 @@ class NewNote extends React.Component {
   render() {
     return (
       <div>
-        <h1>New Notes</h1>
-        <button onClick={this.handleSavingNotes}>Save</button>
-        <button onClick={this.cancelNewNote}>Cancel</button>
-        <div>
-          <h3>Title</h3>
-          <input onChange={this.handleTitleChange}></input>
+        <div className="column">
+          <h1 className="title">New Notes</h1>
         </div>
-        <div>
-          <h3>Notes</h3>
-          <textarea onChange={this.handleEntryChange} className="entry"></textarea>
+        <div className="column">
+          <button className="button is-outline is-small" onClick={this.handleSavingNotes}>Save</button>
+          <button className="button is-outline is-small" onClick={this.cancelNewNote}>Cancel</button>
+        </div>
+        <div className="column">
+            <input className="input is-small" onChange={this.handleTitleChange} placeholder="Title"></input>
+        </div>
+        <div className="column">
+          <textarea className="Large textarea" onChange={this.handleEntryChange} placeholder="Write your notes here!"></textarea>
         </div>
       </div>
     );
