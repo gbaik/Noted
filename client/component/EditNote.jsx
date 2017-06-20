@@ -22,13 +22,13 @@ class EditNote extends React.Component {
 
 
   handleSavingNotes() {
-  //TODO: Update notes at the title and id given 
     var data = {
-      entry : this.state.entry
+      entry : this.state.entry,
+      id: this.noteId
     }
 
     $.ajax({
-      url: '/add/newNotes',
+      url: '/add/editedNotes',
       method: 'POST',
       data: data,
       success: function() {

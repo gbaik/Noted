@@ -28,6 +28,16 @@ app.post('/add/newNotes', function (request, response) {
   response.end();
 });
 
+app.post('/add/editedNotes', function (request, response) {
+  console.log(request.body.id);
+  Notes.findOneAndUpdate({ _id: request.body.id }, {$set: {Entry: request.body.entry}}, function (err) {
+    if (err) return handleError(err);
+    console.log('success');
+  })
+
+  response.end();
+});
+
 app.listen(3000, function () {
   console.log('Server running on port 3000!')
 });
