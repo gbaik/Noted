@@ -14,23 +14,27 @@ class NewNote extends React.Component {
   }
 
   handleSavingNotes() {
-    var data = {
-      title : this.state.title,
-      entry : this.state.entry
-    }
-
-    $.ajax({
-      url: '/add/newNotes',
-      method: 'POST',
-      data: data,
-      success: function() {
-        console.log('POST request success!');
-        location.assign('/client/index.html');
-      },
-      error: function() {
-        console.log('POST request failure, new entry didn\'t save');
+    if (this.state.title.length === 0){
+      alert('Please enter a title');
+    } else {
+      var data = {
+        title : this.state.title,
+        entry : this.state.entry
       }
-    });
+
+      $.ajax({
+        url: '/add/newNotes',
+        method: 'POST',
+        data: data,
+        success: function() {
+          console.log('POST request success!');
+          location.assign('/client/index.html');
+        },
+        error: function() {
+          console.log('POST request failure, new entry didn\'t save');
+        }
+      });
+    }
   }
 
   cancelNewNote() {

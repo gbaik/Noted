@@ -8,7 +8,7 @@ class Note extends React.Component {
 
     this.state = {
       renderNeed: false, 
-      needArray: []
+      needArray: [<div></div>]
     };
 
     this.editNote = this.editNote.bind(this);

@@ -29,7 +29,6 @@ app.post('/add/newNotes', function (request, response) {
 });
 
 app.post('/add/editedNotes', function (request, response) {
-  console.log(request.body.id);
   Notes.findOneAndUpdate({ _id: request.body.id }, {$set: {Entry: request.body.entry}}, function (err) {
     if (err) return handleError(err);
     console.log('success');
