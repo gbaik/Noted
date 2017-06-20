@@ -7,9 +7,10 @@ class NewNote extends React.Component {
       entry: ''
     };
 
+    this.handleSavingNotes = this.handleSavingNotes.bind(this);
+    this.cancelNewNote = this.cancelNewNote.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleEntryChange = this.handleEntryChange.bind(this);
-    this.handleSavingNotes = this.handleSavingNotes.bind(this);
   }
 
   handleSavingNotes() {
@@ -32,6 +33,10 @@ class NewNote extends React.Component {
     });
   }
 
+  cancelNewNote() {
+    location.assign('/client/index.html');
+  }
+
   handleTitleChange(event) {
     this.setState({
       title: event.target.value
@@ -50,6 +55,7 @@ class NewNote extends React.Component {
       <div>
         <h1>New Notes</h1>
         <button onClick={this.handleSavingNotes}>Save</button>
+        <button onClick={this.cancelNewNote}>Cancel</button>
         <div>
           <h3>Title</h3>
           <input onChange={this.handleTitleChange}></input>
