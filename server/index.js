@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static('./'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -46,6 +48,6 @@ app.post('/add/editedNotes', function (request, response) {
   response.end();
 });
 
-app.listen(3000, function () {
-  console.log('Server running on port 3000!')
+app.listen(port, _ => {
+  console.log(`Server connected to port number: ${port}`);
 });
