@@ -5,12 +5,8 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static('./'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
-
-app.get('/', function (request, response) {
-  response.redirect('/client/index.html');
+app.get('*', function (req, res) {
+  res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
 
 app.get('/client/allNotes', function (request, response) {
