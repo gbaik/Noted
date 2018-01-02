@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 class EditNote extends React.Component {
   constructor(props) {
     super(props);

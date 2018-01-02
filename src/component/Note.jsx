@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+import EditNote from './EditNote.jsx';
+
 class Note extends React.Component {
   constructor(props) {
     super(props)

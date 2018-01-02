@@ -1,5 +1,5 @@
 # Compiled Dirs (http://nodejs.org/api/addons.html)
-dist/
+static/dist/
 
 # Dependency directories
 node_modules/

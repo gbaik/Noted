@@ -1,3 +1,5 @@
+import Note from './note.jsx';
+
 var NoteList = ({notes}) => (
   <div>
     {notes.map((note) => 

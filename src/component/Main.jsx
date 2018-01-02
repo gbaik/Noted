@@ -1,20 +1,23 @@
-class Main extends React.Component {
+import React, { Component } from 'react';
+// import NoteList from './NoteList.jsx';
+
+class Main extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      notes: [],
-    }
+    // this.state = {
+    //   notes: []
+    // }
 
-    this.searchNotes = this.searchNotes.bind(this);
+    // this.searchNotes = this.searchNotes.bind(this);
   }
 
   componentDidMount() {
-    this.getAllNotes((notes) => {
-      this.setState({
-        notes: notes
-      })
-    });
+    // this.getAllNotes((notes) => {
+    //   this.setState({
+    //     notes: notes
+    //   })
+    // });
   }
 
   getAllNotes(callback) {
@@ -32,9 +35,9 @@ class Main extends React.Component {
     })
   }
 
-  newNote() {
-    location.assign('/client/new_note.html');
-  }
+  // newNote() {
+  //   location.assign('/client/new_note.html');
+  // }
 
   searchNotes(event, allNotes) {
     allNotes.forEach((items) => {
@@ -55,10 +58,11 @@ class Main extends React.Component {
         </div>
         <div className="column">
           <button className="button is-outline is-small" onClick={this.newNote}>New Note</button>
-          <NoteList notes={this.state.notes} />
+          {/* <NoteList notes={this.state.notes} />  */}
         </div>
-      </div>
+      </div> 
     );
   }
 }
 
+export default Main;

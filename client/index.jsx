@@ -1,1 +1,0 @@
-ReactDOM.render(<Main />, document.getElementById('Main'));

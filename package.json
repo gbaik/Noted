@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "python3.6 server/index.py",
-    "build": "webpack --config=webpack.config.js --display-error-details --watch"
+    "build": "webpack --config=webpack.config.js --display-error-details --w"
   },
   "repository": {
     "type": "git",
