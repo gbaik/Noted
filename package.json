@@ -4,8 +4,8 @@
   "description": "Gideon's MVP project",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server/index.js",
-    "build": "babel . --out-dir compiled --presets es2015,react --ignore node_modules,compiled,server --source-maps inline --watch"
+    "server": "python3.6 server/index.py",
+    "build": "webpack --config=webpack.config.js --display-error-details --watch"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,10 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2"
   }
 }
